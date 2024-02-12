@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dart Game - Results</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-image: url('https://images2.alphacoders.com/539/539865.jpg'); background-size: cover;">
+  <div class="container">
+    <h1 class="title">Game Over</h1>
+    <p>Your total score is: <span id="score"></span></p>
+    <a href="game.html" class="button">New Game</a>
+    <a href="#" class="button" onclick="window.close();">Exit</a>
+  </div>
+  <script>
+    // Calculate and display total score
+    const easyScore = parseInt(localStorage.getItem('easyScore')) || 0;
+    const mediumScore = parseInt(localStorage.getItem('mediumScore')) || 0;
+    const hardScore = parseInt(localStorage.getItem('hardScore')) || 0;
+    const totalScore = easyScore + mediumScore + hardScore;
+    document.getElementById('score').textContent = totalScore;
+  </script>
+</body>
+</html>
